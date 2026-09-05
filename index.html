@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#061326">
+    <meta name="description"
+          content="A Teacher's Day tribute to Akansha Ma'am from the Tinkers of Army Public School Lal Bahadur Shastri Marg.">
+
+    <title>Happy Teacher's Day, Akansha Ma'am! 💡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+            --navy-950: #020814;
+            --navy-900: #061326;
+            --navy-850: #081a31;
+            --navy-800: #0b2340;
+
+            --gold: #f5c451;
+            --gold-light: #ffe59a;
+            --gold-dark: #b88622;
+
+            --green: #39ff88;
+            --green-soft: rgba(57, 255, 136, 0.15);
+
+            --white: #f7fbff;
+            --text: #d7e1ed;
+            --muted: #8fa2b8;
+
+            --border: rgba(245, 196, 81, 0.18);
+            --glass: rgba(7, 25, 47, 0.68);
+
+            --shadow-gold:
+                0 0 25px rgba(245, 196, 81, 0.12);
+
+            --shadow-green:
+                0 0 25px rgba(57, 255, 136, 0.10);
+
+            --radius: 22px;
+        }
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(57, 255, 136, 0.07),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(245, 196, 81, 0.08),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--navy-950),
+                    var(--navy-900) 50%,
+                    #04101f
+                );
+
+            color: var(--white);
+            font-family: "Montserrat", sans-serif;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--navy-950);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* =========================================================
+           BACKGROUND EFFECTS
+        ========================================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .grid {
+            position: absolute;
+            inset: -50%;
+            width: 200%;
+            height: 200%;
+
+            background-image:
+                linear-gradient(
+                    rgba(245, 196, 81, 0.045) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(245, 196, 81, 0.045) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+            transform: perspective(500px) rotateX(55deg);
+            transform-origin: center center;
+            opacity: 0.45;
+
+            animation: gridMove 18s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from {
+                transform:
+                    perspective(500px)
+                    rotateX(55deg)
+                    translateY(0);
+            }
+
+            to {
+                transform:
+                    perspective(500px)
+                    rotateX(55deg)
+                    translateY(55px);
+            }
+        }
+
+        .glow {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.12;
+        }
+
+        .glow.one {
+            background: var(--green);
+            top: 5%;
+            left: -180px;
+        }
+
+        .glow.two {
+            background: var(--gold);
+            top: 45%;
+            right: -180px;
+        }
+
+        .glow.three {
+            background: var(--green);
+            bottom: -180px;
+            left: 35%;
+        }
+
+        /* =========================================================
+           PARTICLES
+        ========================================================= */
+
+        #particles {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 10px var(--green);
+            opacity: 0;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(30px) scale(0.5);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================================
+           SPARKS
+        ========================================================= */
+
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 12px var(--gold);
+            animation: sparkPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkPulse {
+            0%, 100% {
+                opacity: 0.15;
+                transform: scale(0.5);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* =========================================================
+           COMMON
+        ========================================================= */
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        section {
+            position: relative;
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            color: var(--green);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .section-label::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+        }
+
+        .section-title {
+            max-width: 850px;
+            margin-bottom: 24px;
+
+            font-size: clamp(2.2rem, 6vw, 4.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        .gold {
+            color: var(--gold);
+            text-shadow: 0 0 25px rgba(245, 196, 81, 0.15);
+        }
+
+        .green {
+            color: var(--green);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100svh;
+            padding-top: 60px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            right: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            border: 1px solid rgba(245, 196, 81, 0.12);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 50px rgba(245, 196, 81, 0.025),
+                0 0 0 100px rgba(245, 196, 81, 0.015);
+
+            animation: orbit 18s linear infinite;
+        }
+
+        @keyframes orbit {
+            from {
+                transform:
+                    translateY(-50%)
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    translateY(-50%)
+                    rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 9px 14px;
+            margin-bottom: 28px;
+
+            border: 1px solid rgba(57, 255, 136, 0.25);
+            background: rgba(57, 255, 136, 0.055);
+            border-radius: 999px;
+
+            color: var(--green);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px var(--green);
+            animation: statusBlink 1.4s ease-in-out infinite;
+        }
+
+        @keyframes statusBlink {
+            0%, 100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(3.1rem, 9vw, 7.8rem);
+            line-height: 0.94;
+            letter-spacing: -0.065em;
+            max-width: 1050px;
+
+            animation: heroReveal 1s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            text-shadow:
+                0 0 30px rgba(245, 196, 81, 0.18);
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            max-width: 690px;
+            margin-top: 30px;
+
+            color: var(--text);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.8;
+
+            animation: heroReveal 1s 0.15s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 38px;
+
+            animation: heroReveal 1s 0.3s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            min-height: 54px;
+            padding: 0 24px;
+
+            border-radius: 12px;
+            border: 1px solid transparent;
+
+            font-weight: 700;
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .btn-primary {
+            color: var(--navy-950);
+            background: var(--gold);
+            box-shadow:
+                0 8px 30px rgba(245, 196, 81, 0.16);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 14px 40px rgba(245, 196, 81, 0.25);
+        }
+
+        .btn-secondary {
+            color: var(--green);
+            border-color: rgba(57, 255, 136, 0.28);
+            background: rgba(57, 255, 136, 0.05);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            background: rgba(57, 255, 136, 0.1);
+            box-shadow: 0 12px 30px rgba(57, 255, 136, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+
+            color: var(--muted);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            background: linear-gradient(
+                to bottom,
+                var(--gold),
+                transparent
+            );
+            animation: scrollLine 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scaleY(0.6);
+                transform-origin: top;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        /* =========================================================
+           TRIBUTE
+        ========================================================= */
+
+        .tribute {
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent,
+                    rgba(6, 19, 38, 0.55),
+                    transparent
+                );
+        }
+
+        .tribute-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .tribute-visual {
+            position: relative;
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .core {
+            position: relative;
+            width: 230px;
+            height: 230px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            border: 1px solid rgba(57, 255, 136, 0.35);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(57, 255, 136, 0.12),
+                    rgba(6, 19, 38, 0.85) 62%
+                );
+
+            box-shadow:
+                0 0 45px rgba(57, 255, 136, 0.1),
+                inset 0 0 40px rgba(57, 255, 136, 0.06);
+        }
+
+        .core::before,
+        .core::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed rgba(245, 196, 81, 0.35);
+        }
+
+        .core::before {
+            inset: -35px;
+            animation: rotateCore 12s linear infinite;
+        }
+
+        .core::after {
+            inset: -65px;
+            border-color: rgba(57, 255, 136, 0.18);
+            animation: rotateCoreReverse 18s linear infinite;
+        }
+
+        @keyframes rotateCore {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateCoreReverse {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .core-symbol {
+            font-size: 5rem;
+            filter: drop-shadow(
+                0 0 15px rgba(245, 196, 81, 0.4)
+            );
+            animation: bulbPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes bulbPulse {
+            0%, 100% {
+                transform: scale(0.96);
+            }
+
+            50% {
+                transform: scale(1.06);
+            }
+        }
+
+        .orbit-dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        .orbit-dot.one {
+            top: 13%;
+            right: 15%;
+        }
+
+        .orbit-dot.two {
+            bottom: 15%;
+            left: 14%;
+            background: var(--green);
+            box-shadow: 0 0 15px var(--green);
+        }
+
+        .tribute-text {
+            color: var(--text);
+            font-size: 1.08rem;
+            line-height: 2;
+        }
+
+        .tribute-text strong {
+            color: var(--gold-light);
+        }
+
+        .signature {
+            margin-top: 30px;
+            padding-left: 20px;
+            border-left: 2px solid var(--green);
+
+            color: var(--green);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery-section {
+            align-items: flex-start;
+        }
+
+        .gallery-header {
+            margin-bottom: 55px;
+        }
+
+        .gallery-intro {
+            max-width: 700px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .memory-card {
+            position: relative;
+
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(10, 34, 61, 0.8),
+                    rgba(3, 13, 27, 0.9)
+                );
+
+            box-shadow: var(--shadow-gold);
+
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                transform 0.7s cubic-bezier(.2,.8,.2,1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .memory-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 196, 81, 0.42);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25),
+                0 0 30px rgba(245, 196, 81, 0.08);
+        }
+
+        .image-wrap {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: #061326;
+        }
+
+        .image-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 60%,
+                    rgba(2, 8, 20, 0.45)
+                );
+
+            pointer-events: none;
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.7s cubic-bezier(.2,.8,.2,1),
+                filter 0.7s ease;
+        }
+
+        .memory-card:hover img {
+            transform: scale(1.06);
+            filter: saturate(1.08);
+        }
+
+        .memory-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+
+            padding: 7px 10px;
+
+            border: 1px solid rgba(57, 255, 136, 0.3);
+            border-radius: 8px;
+
+            background: rgba(2, 8, 20, 0.75);
+            backdrop-filter: blur(10px);
+
+            color: var(--green);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.68rem;
+        }
+
+        .caption {
+            padding: 20px 21px 23px;
+
+            color: var(--text);
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           FOOTER / SIGN OFF
+        ========================================================= */
+
+        .footer {
+            min-height: 80vh;
+            text-align: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: "⚙";
+            position: absolute;
+
+            font-size: min(65vw, 600px);
+            line-height: 1;
+
+            color: rgba(245, 196, 81, 0.025);
+
+            animation: gearRotate 30s linear infinite;
+        }
+
+        @keyframes gearRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .footer-title {
+            font-size: clamp(2.5rem, 7vw, 5.8rem);
+            line-height: 1.02;
+            letter-spacing: -0.055em;
+        }
+
+        .footer-message {
+            max-width: 700px;
+            margin: 30px auto 0;
+
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .footer-message strong {
+            color: var(--gold);
+        }
+
+        .footer-line {
+            width: 90px;
+            height: 2px;
+            margin: 35px auto;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--green),
+                transparent
+            );
+
+            box-shadow: 0 0 15px rgba(57, 255, 136, 0.4);
+        }
+
+        .footer-bottom {
+            color: var(--muted);
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================================================
+           REVEAL
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            section {
+                min-height: auto;
+                padding: 90px 0;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 80px 0;
+            }
+
+            .tribute-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .tribute-visual {
+                min-height: 350px;
+                order: 2;
+            }
+
+            .tribute-copy {
+                order: 1;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                min-height: 70vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 28px, 1120px);
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                padding-top: 60px;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 16vw, 5rem);
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+                line-height: 1.7;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .core {
+                width: 180px;
+                height: 180px;
+            }
+
+            .core-symbol {
+                font-size: 4rem;
+            }
+
+            .core::before {
+                inset: -25px;
+            }
+
+            .core::after {
+                inset: -45px;
+            }
+
+            .tribute-text {
+                font-size: 0.98rem;
+                line-height: 1.85;
+            }
+
+            .gallery {
+                gap: 20px;
+            }
+
+            .caption {
+                font-size: 0.87rem;
+            }
+
+            .footer-message {
+                font-size: 0.92rem;
+            }
+        }
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================= -->
+
+    <div class="background" aria-hidden="true">
+        <div class="grid"></div>
+        <div class="glow one"></div>
+        <div class="glow two"></div>
+        <div class="glow three"></div>
+
+        <div class="spark" style="top:18%;left:12%;"></div>
+        <div class="spark" style="top:35%;left:78%;animation-delay:.7s;"></div>
+        <div class="spark" style="top:71%;left:18%;animation-delay:1.2s;"></div>
+        <div class="spark" style="top:82%;left:85%;animation-delay:.3s;"></div>
+    </div>
+
+    <div id="particles" aria-hidden="true"></div>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="status-dot"></span>
+                        TINKERING LAB // TEACHER'S DAY
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span>Happy</span>
+                        <span class="highlight">Teacher's Day,</span>
+                        <span>Akansha Ma'am! 💡</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        To the mentor who sparks our curiosity and helps us
+                        build the future.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#tribute"
+                            class="btn btn-primary"
+                        >
+                            Read Our Message
+                            <span>↓</span>
+                        </a>
+
+                        <a
+                            href="#memories"
+                            class="btn btn-secondary"
+                        >
+                            Explore Our Memories
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <span class="scroll-line"></span>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TRIBUTE
+        ====================================================== -->
+
+        <section class="tribute" id="tribute">
+
+            <div class="container">
+
+                <div class="tribute-layout">
+
+                    <div class="tribute-visual reveal">
+
+                        <div class="orbit-dot one"></div>
+                        <div class="orbit-dot two"></div>
+
+                        <div class="core">
+                            <div class="core-symbol">💡</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tribute-copy reveal">
+
+                        <div class="section-label">
+                            MESSAGE_01
+                        </div>
+
+                        <h2 class="section-title">
+                            Thank You for
+                            <span class="gold">Inspiring the Tinkers!</span>
+                        </h2>
+
+                        <div class="tribute-text">
+
+                            <p>
+                                Dear Akansha Ma'am,
+                            </p>
+
+                            <br>
+
+                            <p>
+                                On this Teacher's Day, we wanted to do
+                                something special to show you how much we
+                                appreciate everything you do.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                You don't just teach us; you give us the
+                                freedom to experiment, make mistakes, and
+                                build amazing things in the
+                                <strong>Tinkering Lab</strong>.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                Thank you for your endless patience, for
+                                believing in our crazy ideas, and for being
+                                the best Tinkering mentor we could ever ask
+                                for.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                You make learning feel like an adventure!
+                            </p>
+
+                            <div class="signature">
+                                // FROM IDEAS → EXPERIMENTS → CREATIONS
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MEMORIES
+        ====================================================== -->
+
+        <section class="gallery-section" id="memories">
+
+            <div class="container">
+
+                <div class="gallery-header reveal">
+
+                    <div class="section-label">
+                        MEMORY_ARCHIVE
+                    </div>
+
+                    <h2 class="section-title">
+                        Engineered with
+                        <span class="gold">Love</span>
+                        <br>
+                        (and a lot of hard work!)
+                    </h2>
+
+                    <p class="gallery-intro">
+                        Every project, competition and achievement carries
+                        a little piece of the guidance, encouragement and
+                        countless hours that made it possible.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery">
+
+                    <!-- IMAGE 1 -->
+
+                    <article class="memory-card reveal">
+
+                        <div class="image-wrap">
+
+                            <span class="memory-number">
+                                MEMORY_01
+                            </span>
+
+                            <img
+                                src="1000199110.jpg"
+                                alt="Hackfest 2026 Master Level achievement"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="caption">
+                            Conquering Hackfest 2026 Master Level!
+                            Thank you for guiding us to the trophy,
+                            Ma'am. 🏆
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 2 -->
+
+                    <article class="memory-card reveal">
+
+                        <div class="image-wrap">
+
+                            <span class="memory-number">
+                                MEMORY_02
+                            </span>
+
+                            <img
+                                src="1000199154.jpg"
+                                alt="Students showcasing their skills on the field"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="caption">
+                            Proud moments and sunny days showcasing our
+                            skills on the field! ☀️
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 3 -->
+
+                    <article class="memory-card reveal">
+
+                        <div class="image-wrap">
+
+                            <span class="memory-number">
+                                MEMORY_03
+                            </span>
+
+                            <img
+                                src="1000199145.jpg"
+                                alt="CSIR StartUp Conclave 2025"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="caption">
+                            Taking our ideas to the big stage at the CSIR
+                            StartUp Conclave 2025! 🚀
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 4 -->
+
+                    <article class="memory-card reveal">
+
+                        <div class="image-wrap">
+
+                            <span class="memory-number">
+                                MEMORY_04
+                            </span>
+
+                            <img
+                                src="1000199142.jpg"
+                                alt="Climate Warriors Mission felicitation"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="caption">
+                            Felicitation day for the Climate Warriors
+                            Mission. Making APS LBS Marg proud! 🌍
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER / SIGN OFF
+        ====================================================== -->
+
+        <section class="footer" id="footer">
+
+            <div class="container">
+
+                <div class="footer-content reveal">
+
+                    <div class="section-label">
+                        TRANSMISSION_COMPLETE
+                    </div>
+
+                    <h2 class="footer-title">
+                        Wishing you the
+                        <span class="gold">
+                            happiest Teacher's Day!
+                        </span>
+                    </h2>
+
+                    <div class="footer-line"></div>
+
+                    <p class="footer-message">
+                        — With immense respect and love,
+                        <strong>
+                            The Tinkers of Army Public School
+                            Lal Bahadur Shastri Marg
+                        </strong>
+                        ⚙️💙
+                    </p>
+
+                    <p class="footer-bottom">
+                        BUILT WITH CURIOSITY • POWERED BY IDEAS •
+                        INSPIRED BY A MENTOR
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* =====================================================
+           PARTICLE SYSTEM
+        ====================================================== */
+
+        const particleContainer =
+            document.getElementById("particles");
+
+        const particleCount =
+            window.innerWidth < 600 ? 35 : 65;
+
+        for (let i = 0; i < particleCount; i++) {
+
+            const particle =
+                document.createElement("span");
+
+            particle.className = "particle";
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+            particle.style.top =
+                (Math.random() * 100 + 100) + "%";
+
+            particle.style.animationDuration =
+                (8 + Math.random() * 14) + "s";
+
+            particle.style.animationDelay =
+                (Math.random() * 10) + "s";
+
+            particle.style.opacity =
+                Math.random() * 0.7;
+
+            const size =
+                1 + Math.random() * 3;
+
+            particle.style.width = size + "px";
+            particle.style.height = size + "px";
+
+            particleContainer.appendChild(particle);
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
+                }
+            );
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+
+        /* =====================================================
+           SMOOTH ANCHOR SCROLL
+        ====================================================== */
+
+        document.querySelectorAll(
+            'a[href^="#"]'
+        ).forEach(anchor => {
+
+            anchor.addEventListener("click", function(event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target) return;
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+
+
+        /* =====================================================
+           SUBTLE MOUSE PARALLAX
+        ====================================================== */
+
+        const core =
+            document.querySelector(".core");
+
+        const grid =
+            document.querySelector(".grid");
+
+        if (
+            window.matchMedia(
+                "(pointer:fine)"
+            ).matches
+        ) {
+
+            window.addEventListener(
+                "mousemove",
+                event => {
+
+                    const x =
+                        (event.clientX /
+                        window.innerWidth - 0.5);
+
+                    const y =
+                        (event.clientY /
+                        window.innerHeight - 0.5);
+
+                    if (core) {
+
+                        core.style.transform =
+                            `translate(${x * 10}px, ${y * 10}px)`;
+
+                    }
+
+                    if (grid) {
+
+                        grid.style.marginLeft =
+                            `${x * 12}px`;
+
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           IMAGE FALLBACK
+        ====================================================== */
+
+        document.querySelectorAll(
+            ".memory-card img"
+        ).forEach(img => {
+
+            img.addEventListener(
+                "error",
+                function() {
+
+                    this.style.display = "none";
+
+                    const parent =
+                        this.parentElement;
+
+                    parent.style.display = "flex";
+                    parent.style.alignItems = "center";
+                    parent.style.justifyContent = "center";
+
+                    const fallback =
+                        document.createElement("div");
+
+                    fallback.innerHTML =
+                        "IMAGE OFFLINE";
+
+                    fallback.style.color =
+                        "#39ff88";
+
+                    fallback.style.fontFamily =
+                        '"Roboto Mono", monospace';
+
+                    fallback.style.fontSize =
+                        "0.7rem";
+
+                    fallback.style.letterSpacing =
+                        "0.15em";
+
+                    parent.appendChild(fallback);
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           YEAR / CONSOLE
+        ====================================================== */
+
+        console.log(
+            "%c TINKERING LAB ",
+            "color:#39ff88;font-weight:bold;"
+        );
+
+        console.log(
+            "%c Happy Teacher's Day, Akansha Ma'am! 💡 ",
+            "color:#f5c451;font-weight:bold;"
+        );
+
+    </script>
+
+</body>
+</html>
