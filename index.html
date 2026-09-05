@@ -1,34 +1,57 @@
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050707"><title>Happy Teacher's Day, Akansha Ma'am! 💡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#faf7f0">
+<meta
+    name="description"
+    content="A heartfelt Teacher's Day tribute from The Tinkers to Akansha Ma'am."
+>
 
+<title>Happy Teacher's Day, Akansha Ma'am! ✨</title>
+
+<!-- Elegant serif + clean sans-serif -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
+
+    /* =========================================================
+       ROOT
+    ========================================================== */
+
     :root {
-        --black: #030505;
-        --charcoal: #080d0c;
-        --panel: #0b1210;
-        --panel-2: #0f1714;
+        --cream: #fbf9f4;
+        --cream-dark: #f3eee4;
+        --white: #ffffff;
 
-        --green: #39ff88;
-        --green-dim: rgba(57, 255, 136, 0.15);
+        --navy: #102544;
+        --navy-light: #294364;
 
-        --gold: #f5c451;
-        --gold-light: #ffe69a;
-        --gold-dim: rgba(245, 196, 81, 0.15);
+        --gold: #c99a3e;
+        --gold-light: #e4c77e;
+        --gold-soft: #f4ead2;
 
-        --white: #f5f8f6;
-        --gray: #a8b4ae;
-        --muted: #68756e;
+        --text: #263649;
+        --muted: #718094;
 
-        --border: rgba(57, 255, 136, 0.18);
-        --gold-border: rgba(245, 196, 81, 0.2);
+        --border: rgba(16, 37, 68, 0.10);
+
+        --shadow:
+            0 18px 50px rgba(16, 37, 68, 0.08);
+
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", Arial, sans-serif;
     }
+
+
+    /* =========================================================
+       RESET
+    ========================================================== */
 
     * {
         margin: 0;
@@ -41,264 +64,207 @@
     }
 
     body {
-        min-height: 100vh;
+        background: var(--cream);
+        color: var(--text);
+        font-family: var(--sans);
         overflow-x: hidden;
-
-        background:
-            radial-gradient(
-                circle at 15% 10%,
-                rgba(57, 255, 136, 0.055),
-                transparent 30%
-            ),
-            radial-gradient(
-                circle at 85% 50%,
-                rgba(245, 196, 81, 0.045),
-                transparent 30%
-            ),
-            var(--black);
-
-        color: var(--white);
-        font-family: "Montserrat", sans-serif;
     }
 
     ::selection {
-        background: var(--green);
-        color: #000;
+        background: var(--gold);
+        color: white;
     }
 
-    /* ================================
-       BACKGROUND
-    ================================= */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-    .background {
+
+    /* =========================================================
+       DECORATIVE BACKGROUND
+    ========================================================== */
+
+    body::before {
+        content: "";
         position: fixed;
         inset: 0;
-        z-index: -10;
-        pointer-events: none;
-        overflow: hidden;
-    }
 
-    .grid {
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        left: -50%;
-        top: -45%;
+        pointer-events: none;
+        z-index: -2;
 
         background-image:
-            linear-gradient(
-                rgba(57, 255, 136, 0.025) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                90deg,
-                rgba(57, 255, 136, 0.025) 1px,
+            radial-gradient(
+                rgba(201, 154, 62, 0.08) 1px,
                 transparent 1px
             );
 
-        background-size: 55px 55px;
+        background-size: 32px 32px;
 
-        transform:
-            perspective(500px)
-            rotateX(60deg);
+        mask-image:
+            linear-gradient(
+                to bottom,
+                black,
+                transparent 75%
+            );
 
-        animation: gridMove 20s linear infinite;
-    }
-
-    @keyframes gridMove {
-        from {
-            transform:
-                perspective(500px)
-                rotateX(60deg)
-                translateY(0);
-        }
-
-        to {
-            transform:
-                perspective(500px)
-                rotateX(60deg)
-                translateY(55px);
-        }
+        opacity: 0.5;
     }
 
     .ambient {
-        position: absolute;
+        position: fixed;
         width: 400px;
         height: 400px;
         border-radius: 50%;
         filter: blur(100px);
-        opacity: 0.08;
-    }
-
-    .ambient.green {
-        background: var(--green);
-        left: -200px;
-        top: 15%;
-    }
-
-    .ambient.gold {
-        background: var(--gold);
-        right: -200px;
-        top: 60%;
-    }
-
-    /* ================================
-       PARTICLES
-    ================================= */
-
-    #particles {
-        position: fixed;
-        inset: 0;
-        z-index: -5;
         pointer-events: none;
+        z-index: -3;
+        opacity: 0.18;
     }
 
-    .particle {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        border-radius: 50%;
-        background: var(--green);
-        box-shadow: 0 0 8px var(--green);
-        animation: floatParticle linear infinite;
+    .ambient-one {
+        background: #e8d5a5;
+        top: -200px;
+        left: -180px;
     }
 
-    @keyframes floatParticle {
-        from {
-            transform: translateY(20vh);
-            opacity: 0;
-        }
-
-        15% {
-            opacity: 0.8;
-        }
-
-        85% {
-            opacity: 0.4;
-        }
-
-        to {
-            transform: translateY(-120vh);
-            opacity: 0;
-        }
+    .ambient-two {
+        background: #dce6ef;
+        right: -200px;
+        top: 45%;
     }
 
-    /* ================================
+
+    /* =========================================================
        COMMON
-    ================================= */
+    ========================================================== */
 
     .container {
-        width: min(1100px, calc(100% - 36px));
+        width: min(1120px, calc(100% - 40px));
         margin: auto;
     }
 
     section {
         position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 100px 0;
+        padding: 110px 0;
     }
 
-    .label {
+    .eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
 
-        margin-bottom: 20px;
+        color: var(--gold);
 
-        color: var(--green);
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.7rem;
-        letter-spacing: 0.18em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
     }
 
-    .label::before {
+    .eyebrow::before,
+    .eyebrow::after {
         content: "";
         width: 28px;
         height: 1px;
-        background: var(--green);
-        box-shadow: 0 0 10px var(--green);
+        background: var(--gold);
     }
 
-    /* ================================
+    .section-title {
+        margin-top: 15px;
+
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: clamp(2.4rem, 6vw, 4.8rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+
+    .section-title em {
+        color: var(--gold);
+        font-weight: 500;
+    }
+
+    .section-intro {
+        max-width: 680px;
+        margin-top: 20px;
+
+        color: var(--muted);
+        line-height: 1.8;
+    }
+
+
+    /* =========================================================
        HERO
-    ================================= */
+    ========================================================== */
 
     .hero {
         min-height: 100svh;
-        overflow: hidden;
-    }
 
-    .hero-content {
-        max-width: 950px;
-    }
-
-    .status {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
 
-        padding: 9px 14px;
-        margin-bottom: 30px;
+        text-align: center;
 
-        border: 1px solid rgba(57, 255, 136, 0.22);
-        border-radius: 50px;
-
-        background: rgba(57, 255, 136, 0.045);
-
-        color: var(--green);
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
+        padding: 70px 0;
     }
 
-    .status-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--green);
-        box-shadow: 0 0 12px var(--green);
-        animation: blink 1.5s infinite;
+    .hero-inner {
+        max-width: 950px;
+        margin: auto;
     }
 
-    @keyframes blink {
-        0%, 100% {
-            opacity: 0.35;
-        }
+    .hero-badge {
+        display: inline-block;
 
-        50% {
-            opacity: 1;
-        }
+        margin-bottom: 28px;
+        padding: 8px 16px;
+
+        border: 1px solid var(--gold-light);
+        border-radius: 999px;
+
+        background: rgba(255,255,255,0.65);
+
+        color: var(--gold);
+
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+
+        animation: fadeDown 1s ease both;
     }
 
     .hero h1 {
-        max-width: 1000px;
+        color: var(--navy);
 
-        font-size: clamp(3.2rem, 9vw, 7.4rem);
-        line-height: 0.94;
-        letter-spacing: -0.065em;
+        font-family: var(--serif);
+        font-size: clamp(3.5rem, 9vw, 7.5rem);
+        font-weight: 600;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+
+        animation: fadeUp 1s 0.1s ease both;
     }
 
-    .hero h1 .gold {
-        display: block;
+    .hero h1 span {
         color: var(--gold);
-        text-shadow:
-            0 0 30px rgba(245, 196, 81, 0.18);
-    }
-
-    .hero h1 .last {
         display: block;
+        font-weight: 500;
     }
 
     .hero-subtitle {
-        max-width: 680px;
-        margin-top: 32px;
+        max-width: 650px;
+        margin: 30px auto 0;
 
-        color: var(--gray);
+        color: var(--navy-light);
+
         font-size: clamp(1rem, 2vw, 1.2rem);
         line-height: 1.8;
+
+        animation: fadeUp 1s 0.25s ease both;
     }
 
     .hero-button {
@@ -307,123 +273,160 @@
         gap: 12px;
 
         margin-top: 38px;
-        padding: 16px 23px;
+        padding: 15px 25px;
 
         border: 1px solid var(--gold);
-        border-radius: 10px;
+        border-radius: 999px;
 
-        background: var(--gold);
-        color: #050505;
+        background: var(--navy);
+        color: white;
 
-        font-weight: 800;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        font-weight: 700;
 
         box-shadow:
-            0 0 25px rgba(245, 196, 81, 0.12);
+            0 12px 30px rgba(16, 37, 68, 0.13);
 
         transition:
             transform 0.3s ease,
-            box-shadow 0.3s ease;
+            box-shadow 0.3s ease,
+            background 0.3s ease;
+
+        animation: fadeUp 1s 0.4s ease both;
     }
 
     .hero-button:hover {
         transform: translateY(-4px);
+        background: #19365d;
+
         box-shadow:
-            0 12px 35px rgba(245, 196, 81, 0.2);
+            0 16px 35px rgba(16, 37, 68, 0.18);
     }
 
-    .hero-button span {
+    .hero-button .arrow {
+        color: var(--gold-light);
         font-size: 1.1rem;
     }
 
-    .scroll {
+    .hero-decoration {
         position: absolute;
-        left: 50%;
+
+        width: 180px;
+        height: 180px;
+
+        border: 1px solid var(--gold-light);
+        border-radius: 50%;
+
+        opacity: 0.45;
+    }
+
+    .hero-decoration.one {
+        top: 12%;
+        left: -70px;
+    }
+
+    .hero-decoration.two {
+        bottom: 10%;
+        right: -70px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero-decoration::before,
+    .hero-decoration::after {
+        content: "✦";
+
+        position: absolute;
+
+        color: var(--gold);
+        font-size: 18px;
+    }
+
+    .hero-decoration::before {
+        top: 20px;
+        left: 20px;
+    }
+
+    .hero-decoration::after {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .hero-scroll {
+        position: absolute;
         bottom: 28px;
+        left: 50%;
         transform: translateX(-50%);
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-
         color: var(--muted);
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.6rem;
-        letter-spacing: 0.15em;
+
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
     }
 
-    .scroll-line {
+    .hero-scroll::after {
+        content: "";
+
+        display: block;
+
         width: 1px;
-        height: 45px;
-        background: linear-gradient(
-            var(--green),
-            transparent
-        );
+        height: 35px;
+
+        margin: 10px auto 0;
+
+        background: var(--gold);
     }
 
-    /* ================================
+
+    /* =========================================================
        TRIBUTE
-    ================================= */
+    ========================================================== */
 
     .tribute {
-        background:
-            linear-gradient(
-                180deg,
-                transparent,
-                rgba(8, 18, 14, 0.45),
-                transparent
-            );
+        background: rgba(255,255,255,0.58);
     }
 
-    .tribute-box {
+    .tribute-card {
         position: relative;
 
-        max-width: 900px;
+        max-width: 930px;
         margin: auto;
 
-        padding: clamp(30px, 6vw, 65px);
+        padding: clamp(35px, 7vw, 75px);
+
+        background: rgba(255,255,255,0.9);
 
         border: 1px solid var(--border);
-        border-radius: 24px;
+        border-radius: 28px;
 
-        background:
-            linear-gradient(
-                145deg,
-                rgba(13, 25, 20, 0.82),
-                rgba(5, 10, 9, 0.88)
-            );
+        box-shadow: var(--shadow);
 
-        box-shadow:
-            0 0 50px rgba(57, 255, 136, 0.035);
+        text-align: center;
     }
 
-    .tribute-box::before {
-        content: "";
+    .tribute-card::before {
+        content: "“";
+
         position: absolute;
-        top: -1px;
-        left: 40px;
-        right: 40px;
-        height: 1px;
+        top: 20px;
+        left: 30px;
 
-        background: linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
+        color: var(--gold-soft);
 
-        box-shadow: 0 0 12px rgba(245, 196, 81, 0.4);
+        font-family: var(--serif);
+        font-size: 8rem;
+        line-height: 1;
     }
 
     .tribute-title {
-        max-width: 750px;
-        margin-bottom: 30px;
+        position: relative;
 
-        font-size: clamp(2.3rem, 6vw, 4.7rem);
-        line-height: 1.03;
-        letter-spacing: -0.05em;
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: clamp(2.3rem, 5vw, 4.5rem);
+        line-height: 1.1;
     }
 
     .tribute-title span {
@@ -431,34 +434,274 @@
     }
 
     .tribute-text {
-        color: var(--gray);
-        font-size: 1.05rem;
+        max-width: 760px;
+        margin: 30px auto 0;
+
+        color: var(--text);
+
+        font-size: 1.02rem;
         line-height: 2;
     }
 
     .tribute-text strong {
-        color: var(--green);
+        color: var(--navy);
     }
 
-    /* ================================
-       GALLERY
-    ================================= */
+    .tribute-signature {
+        margin-top: 35px;
 
-    .gallery-section {
-        display: block;
+        color: var(--gold);
+
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        font-style: italic;
     }
 
-    .gallery-heading {
+
+    /* =========================================================
+       STATS
+    ========================================================== */
+
+    .stats {
+        text-align: center;
+    }
+
+    .stats-header {
+        margin-bottom: 55px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .stat {
+        padding: 32px 20px;
+
+        background: white;
+
+        border: 1px solid var(--border);
+        border-radius: 20px;
+
+        box-shadow:
+            0 10px 35px rgba(16, 37, 68, 0.045);
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .stat:hover {
+        transform: translateY(-7px);
+
+        box-shadow:
+            0 18px 40px rgba(16, 37, 68, 0.1);
+    }
+
+    .stat-number {
+        color: var(--gold);
+
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .stat-label {
+        margin-top: 13px;
+
+        color: var(--navy);
+
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       FEATURES
+    ========================================================== */
+
+    .features {
+        background: rgba(244,238,228,0.5);
+    }
+
+    .features-heading {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .feature {
+        position: relative;
+
+        padding: 38px 30px;
+
+        background: white;
+
+        border: 1px solid var(--border);
+        border-radius: 22px;
+
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-8px);
+
+        box-shadow:
+            0 18px 45px rgba(16, 37, 68, 0.09);
+    }
+
+    .feature-icon {
+        width: 52px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 25px;
+
+        border-radius: 50%;
+
+        background: var(--gold-soft);
+
+        color: var(--gold);
+
+        font-family: var(--serif);
+        font-size: 1.45rem;
+    }
+
+    .feature h3 {
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: 1.65rem;
+        font-weight: 600;
+    }
+
+    .feature p {
+        margin-top: 14px;
+
+        color: var(--muted);
+
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .feature-number {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+
+        color: rgba(16,37,68,0.07);
+
+        font-family: var(--serif);
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+       QUOTES
+    ========================================================== */
+
+    .messages {
+        text-align: center;
+    }
+
+    .messages-header {
         margin-bottom: 50px;
     }
 
-    .gallery-title {
-        max-width: 900px;
-        margin-bottom: 20px;
+    .quotes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
 
-        font-size: clamp(2.5rem, 6vw, 5rem);
+    .quote {
+        position: relative;
+
+        min-height: 210px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 35px 28px;
+
+        background: white;
+
+        border: 1px solid var(--gold-light);
+        border-radius: 20px;
+
+        box-shadow:
+            0 12px 35px rgba(16, 37, 68, 0.05);
+
+        transition:
+            transform 0.3s ease;
+    }
+
+    .quote:hover {
+        transform: translateY(-6px) rotate(-0.5deg);
+    }
+
+    .quote::before {
+        content: "“";
+
+        position: absolute;
+        top: 8px;
+        left: 18px;
+
+        color: var(--gold-soft);
+
+        font-family: var(--serif);
+        font-size: 5rem;
         line-height: 1;
-        letter-spacing: -0.055em;
+    }
+
+    .quote p {
+        position: relative;
+
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-style: italic;
+        line-height: 1.55;
+    }
+
+
+    /* =========================================================
+       GALLERY
+    ========================================================== */
+
+    .gallery-section {
+        background: rgba(255,255,255,0.55);
+    }
+
+    .gallery-header {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .gallery-title {
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: clamp(2.4rem, 6vw, 4.8rem);
+        line-height: 1.05;
     }
 
     .gallery-title span {
@@ -467,7 +710,9 @@
 
     .gallery-subtitle {
         max-width: 650px;
-        color: var(--gray);
+        margin: 20px auto 0;
+
+        color: var(--muted);
         line-height: 1.8;
     }
 
@@ -477,84 +722,40 @@
         gap: 25px;
     }
 
-    .photo-card {
+    .photo {
         position: relative;
         overflow: hidden;
 
         aspect-ratio: 16 / 10;
 
-        border: 1px solid var(--border);
-        border-radius: 18px;
+        border-radius: 22px;
 
-        background: var(--panel);
+        background: var(--cream-dark);
 
         box-shadow:
-            0 0 30px rgba(57, 255, 136, 0.025);
+            0 15px 45px rgba(16, 37, 68, 0.09);
 
         transition:
             transform 0.4s ease,
-            border-color 0.4s ease,
             box-shadow 0.4s ease;
     }
 
-    .photo-card::before {
+    .photo::after {
         content: "";
+
         position: absolute;
         inset: 0;
-        z-index: 2;
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(57, 255, 136, 0.08),
-                transparent 35%,
-                transparent 65%,
-                rgba(245, 196, 81, 0.08)
-            );
+        border: 1px solid rgba(201,154,62,0.18);
+        border-radius: inherit;
 
         pointer-events: none;
     }
 
-    .photo-card::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        height: 2px;
-
-        background: linear-gradient(
-            90deg,
-            var(--green),
-            var(--gold),
-            var(--green)
-        );
-
-        transform: scaleX(0);
-        transform-origin: left;
-
-        transition: transform 0.5s ease;
-    }
-
-    .photo-card:hover {
-        transform: translateY(-7px);
-
-        border-color:
-            rgba(57, 255, 136, 0.4);
-
-        box-shadow:
-            0 18px 50px rgba(0, 0, 0, 0.35),
-            0 0 30px rgba(57, 255, 136, 0.06);
-    }
-
-    .photo-card:hover::after {
-        transform: scaleX(1);
-    }
-
-    .photo-card img {
+    .photo img {
         width: 100%;
         height: 100%;
+
         display: block;
 
         object-fit: cover;
@@ -564,143 +765,183 @@
             filter 0.5s ease;
     }
 
-    .photo-card:hover img {
-        transform: scale(1.06);
-        filter: saturate(1.08);
+    .photo:hover {
+        transform: translateY(-6px);
+
+        box-shadow:
+            0 22px 55px rgba(16, 37, 68, 0.14);
     }
 
-    .corner {
-        position: absolute;
-        z-index: 4;
-
-        width: 18px;
-        height: 18px;
-
-        border-color: var(--green);
-        border-style: solid;
+    .photo:hover img {
+        transform: scale(1.045);
     }
 
-    .corner.tl {
-        top: 12px;
-        left: 12px;
-        border-width: 1px 0 0 1px;
-    }
 
-    .corner.br {
-        bottom: 12px;
-        right: 12px;
-        border-width: 0 1px 1px 0;
-    }
-
-    /* ================================
+    /* =========================================================
        FOOTER
-    ================================= */
+    ========================================================== */
 
     .footer {
-        min-height: 85vh;
+        min-height: 75vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         text-align: center;
-        overflow: hidden;
-    }
 
-    .footer::before {
-        content: "⚙";
-
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-        transform: translate(-50%, -50%);
-
-        font-size: min(70vw, 650px);
-
-        color: rgba(57, 255, 136, 0.018);
-
-        pointer-events: none;
+        background:
+            linear-gradient(
+                180deg,
+                var(--cream),
+                #f1e9d9
+            );
     }
 
     .footer-content {
-        position: relative;
-        z-index: 2;
         max-width: 900px;
-        margin: auto;
     }
 
     .footer-title {
-        font-size: clamp(2.7rem, 7vw, 6rem);
+        margin-top: 20px;
+
+        color: var(--navy);
+
+        font-family: var(--serif);
+        font-size: clamp(2.8rem, 7vw, 6rem);
         line-height: 1;
-        letter-spacing: -0.06em;
+        letter-spacing: -0.05em;
     }
 
     .footer-title span {
+        display: block;
         color: var(--gold);
     }
 
     .footer-line {
-        width: 100px;
+        width: 90px;
         height: 1px;
 
         margin: 35px auto;
 
-        background: linear-gradient(
-            90deg,
-            transparent,
-            var(--green),
-            transparent
-        );
-
-        box-shadow:
-            0 0 15px var(--green);
+        background: var(--gold);
     }
 
     .footer-text {
-        max-width: 700px;
-        margin: auto;
+        color: var(--navy-light);
 
-        color: var(--gray);
         font-size: 1rem;
-        line-height: 1.9;
+        line-height: 1.8;
     }
 
     .footer-text strong {
-        color: var(--gold-light);
+        color: var(--navy);
     }
 
-    .footer-mark {
-        margin-top: 45px;
+    .footer-heart {
+        margin-top: 35px;
+
+        color: var(--gold);
+
+        font-family: var(--serif);
+        font-size: 1.5rem;
+    }
+
+    .footer-small {
+        margin-top: 30px;
 
         color: var(--muted);
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.65rem;
-        letter-spacing: 0.15em;
+
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
     }
 
-    /* ================================
-       REVEAL ANIMATION
-    ================================= */
+
+    /* =========================================================
+       SCROLL ANIMATIONS
+    ========================================================== */
 
     .reveal {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(35px);
 
         transition:
             opacity 0.8s ease,
             transform 0.8s cubic-bezier(.2,.8,.2,1);
     }
 
-    .reveal.show {
+    .reveal.visible {
         opacity: 1;
         transform: translateY(0);
     }
 
-    /* ================================
-       RESPONSIVE
-    ================================= */
 
-    @media (max-width: 750px) {
+    /* =========================================================
+       HERO ANIMATIONS
+    ========================================================== */
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================== */
+
+    @media (max-width: 850px) {
 
         section {
-            min-height: auto;
             padding: 85px 0;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .features-grid,
+        .quotes {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .feature {
+            padding: 32px 26px;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .container {
+            width: min(100% - 28px, 1120px);
+        }
+
+        section {
+            padding: 75px 0;
         }
 
         .hero {
@@ -708,54 +949,11 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 15vw, 5.2rem);
+            font-size: clamp(3rem, 15vw, 5rem);
         }
 
         .hero-subtitle {
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .scroll {
-            display: none;
-        }
-
-        .tribute-box {
-            border-radius: 18px;
-        }
-
-        .tribute-text {
-            font-size: 0.96rem;
-            line-height: 1.85;
-        }
-
-        .gallery {
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-
-        .photo-card {
-            aspect-ratio: 16 / 10;
-            border-radius: 15px;
-        }
-
-        .footer {
-            min-height: 75vh;
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-        }
-    }
-
-    @media (max-width: 450px) {
-
-        .container {
-            width: min(100% - 28px, 1100px);
-        }
-
-        .status {
-            font-size: 0.58rem;
+            font-size: 0.94rem;
         }
 
         .hero-button {
@@ -763,8 +961,63 @@
             justify-content: center;
         }
 
-        .tribute-box {
-            padding: 28px 22px;
+        .hero-decoration {
+            display: none;
+        }
+
+        .tribute-card {
+            padding: 35px 24px;
+            border-radius: 20px;
+        }
+
+        .tribute-card::before {
+            font-size: 5rem;
+            left: 15px;
+        }
+
+        .tribute-text {
+            font-size: 0.93rem;
+            line-height: 1.85;
+        }
+
+        .stats-grid {
+            gap: 12px;
+        }
+
+        .stat {
+            padding: 25px 12px;
+        }
+
+        .stat-number {
+            font-size: 2.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.64rem;
+        }
+
+        .quotes {
+            gap: 15px;
+        }
+
+        .quote {
+            min-height: 180px;
+        }
+
+        .quote p {
+            font-size: 1.15rem;
+        }
+
+        .photo {
+            border-radius: 17px;
+        }
+
+        .footer {
+            min-height: 70vh;
+        }
+
+        .footer-text {
+            font-size: 0.88rem;
         }
     }
 
@@ -775,20 +1028,15 @@
         *::after {
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
-            scroll-behavior: auto !important;
             transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
         }
     }
+
 </style>
 
-</head><body><!-- BACKGROUND -->
-<div class="background">
-    <div class="grid"></div>
-    <div class="ambient green"></div>
-    <div class="ambient gold"></div>
-</div>
-
-<div id="particles"></div>
+</head><body><div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 
 
 <!-- =========================================================
@@ -797,23 +1045,20 @@
 
 <section class="hero" id="home">
 
+    <div class="hero-decoration one"></div>
+    <div class="hero-decoration two"></div>
+
     <div class="container">
 
-        <div class="hero-content">
+        <div class="hero-inner">
 
-            <div class="status">
-                <span class="status-dot"></span>
-                TINKERING LAB // TEACHER'S DAY
+            <div class="hero-badge">
+                A Teacher's Day Tribute
             </div>
 
             <h1>
-                Happy
-                <span class="gold">
-                    Teacher's Day,
-                </span>
-                <span class="last">
-                    Akansha Ma'am! 💡
-                </span>
+                Happy Teacher's Day,
+                <span>Akansha Ma'am! ✨</span>
             </h1>
 
             <p class="hero-subtitle">
@@ -826,33 +1071,32 @@
                 class="hero-button"
             >
                 Read Our Message
-                <span>↓</span>
+                <span class="arrow">↓</span>
             </a>
 
         </div>
 
     </div>
 
-    <div class="scroll">
+    <div class="hero-scroll">
         Scroll
-        <span class="scroll-line"></span>
     </div>
 
 </section>
 
 
 <!-- =========================================================
-     MAIN TRIBUTE
+     TRIBUTE
 ========================================================== -->
 
 <section class="tribute" id="tribute">
 
     <div class="container">
 
-        <div class="tribute-box reveal">
+        <div class="tribute-card reveal">
 
-            <div class="label">
-                MESSAGE_01
+            <div class="eyebrow">
+                From The Tinkers
             </div>
 
             <h2 class="tribute-title">
@@ -885,17 +1129,32 @@
                 <br>
 
                 <p>
-                    Thank you for your endless patience, for believing in
-                    our crazy ideas, and for being the best Tinkering
-                    mentor we could ever ask for.
+                    Whether it's a circuit that won't work, a robot
+                    acting up, or a crazy new idea we want to pitch,
+                    you are always there with endless patience and
+                    encouragement.
                 </p>
 
                 <br>
 
                 <p>
-                    You make learning feel like an adventure!
+                    Thank you for pushing us beyond our limits, for
+                    believing in our potential, and for being the
+                    absolute best mentor we could ever ask for.
                 </p>
 
+                <br>
+
+                <p>
+                    You make learning feel like an adventure, and
+                    because of you, we know we can engineer a better
+                    tomorrow!
+                </p>
+
+            </div>
+
+            <div class="tribute-signature">
+                With gratitude, The Tinkers
             </div>
 
         </div>
@@ -906,17 +1165,257 @@
 
 
 <!-- =========================================================
-     MEMORIES & TRIUMPHS
+     STATS
+========================================================== -->
+
+<section class="stats" id="stats">
+
+    <div class="container">
+
+        <div class="stats-header reveal">
+
+            <div class="eyebrow">
+                Tinkering Lab Chronicles
+            </div>
+
+            <h2 class="section-title">
+                The Numbers Behind
+                <em>Our Adventures</em>
+            </h2>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat reveal">
+                <div
+                    class="stat-number"
+                    data-target="100"
+                    data-suffix="+"
+                >
+                    0
+                </div>
+
+                <div class="stat-label">
+                    LEDs Burned & Replaced
+                </div>
+            </div>
+
+
+            <div class="stat reveal">
+                <div
+                    class="stat-number"
+                    data-target="1000"
+                    data-suffix="+"
+                >
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Lines of Code Written
+                </div>
+            </div>
+
+
+            <div class="stat reveal">
+                <div
+                    class="stat-number"
+                    data-target="50"
+                    data-suffix="+"
+                >
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Crazy Ideas Pitched
+                </div>
+            </div>
+
+
+            <div class="stat reveal">
+                <div
+                    class="stat-number"
+                    data-target="1"
+                    data-suffix=""
+                >
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Amazing Mentor
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+========================================================== -->
+
+<section class="features" id="best">
+
+    <div class="container">
+
+        <div class="features-heading reveal">
+
+            <div class="eyebrow">
+                Why You're The Best
+            </div>
+
+            <h2 class="section-title">
+                More Than A Mentor.
+                <em>Our Inspiration.</em>
+            </h2>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <article class="feature reveal">
+
+                <span class="feature-number">
+                    01
+                </span>
+
+                <div class="feature-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Infinite Patience
+                </h3>
+
+                <p>
+                    For guiding us through every burned component,
+                    confusing circuit and coding error without ever
+                    giving up on us.
+                </p>
+
+            </article>
+
+
+            <article class="feature reveal">
+
+                <span class="feature-number">
+                    02
+                </span>
+
+                <div class="feature-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Our Guide
+                </h3>
+
+                <p>
+                    For always knowing exactly how to help us when
+                    our projects refuse to cooperate and we get stuck.
+                </p>
+
+            </article>
+
+
+            <article class="feature reveal">
+
+                <span class="feature-number">
+                    03
+                </span>
+
+                <div class="feature-icon">
+                    ★
+                </div>
+
+                <h3>
+                    Biggest Cheerleader
+                </h3>
+
+                <p>
+                    For supporting us at every Hackfest, Conclave and
+                    competition, and believing in us every step of
+                    the way.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MESSAGES
+========================================================== -->
+
+<section class="messages" id="messages">
+
+    <div class="container">
+
+        <div class="messages-header reveal">
+
+            <div class="eyebrow">
+                A Few Words From Us
+            </div>
+
+            <h2 class="section-title">
+                Messages From
+                <em>The Tinkers</em>
+            </h2>
+
+        </div>
+
+
+        <div class="quotes">
+
+            <div class="quote reveal">
+                <p>
+                    "Thank you for letting us dream big
+                    and build bigger!"
+                </p>
+            </div>
+
+            <div class="quote reveal">
+                <p>
+                    "The Tinkering Lab is our favorite place
+                    in school, all thanks to you."
+                </p>
+            </div>
+
+            <div class="quote reveal">
+                <p>
+                    "Happy Teacher's Day to the coolest
+                    mentor ever!"
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY
 ========================================================== -->
 
 <section class="gallery-section" id="memories">
 
     <div class="container">
 
-        <div class="gallery-heading reveal">
+        <div class="gallery-header reveal">
 
-            <div class="label">
-                MEMORY_ARCHIVE
+            <div class="eyebrow">
+                Our Memories
             </div>
 
             <h2 class="gallery-title">
@@ -927,8 +1426,8 @@
             </h2>
 
             <p class="gallery-subtitle">
-                Moments that remind us how far curiosity, teamwork and
-                a little tinkering can take us.
+                A few moments from the journey, the projects,
+                the competitions and everything in between.
             </p>
 
         </div>
@@ -936,67 +1435,36 @@
 
         <div class="gallery">
 
-            <!-- PHOTO 1 -->
-
-            <div class="photo-card reveal">
-
-                <span class="corner tl"></span>
-                <span class="corner br"></span>
-
+            <div class="photo reveal">
                 <img
                     src="1000199110.jpg"
-                    alt="Hackfest 2026 Master Level"
+                    alt="Tinkers at Hackfest 2026"
                     loading="lazy"
                 >
-
             </div>
 
-
-            <!-- PHOTO 2 -->
-
-            <div class="photo-card reveal">
-
-                <span class="corner tl"></span>
-                <span class="corner br"></span>
-
+            <div class="photo reveal">
                 <img
                     src="1000199154.jpg"
-                    alt="Students showcasing their skills"
+                    alt="Tinkers showcasing their skills"
                     loading="lazy"
                 >
-
             </div>
 
-
-            <!-- PHOTO 3 -->
-
-            <div class="photo-card reveal">
-
-                <span class="corner tl"></span>
-                <span class="corner br"></span>
-
+            <div class="photo reveal">
                 <img
                     src="1000199145.jpg"
                     alt="CSIR StartUp Conclave 2025"
                     loading="lazy"
                 >
-
             </div>
 
-
-            <!-- PHOTO 4 -->
-
-            <div class="photo-card reveal">
-
-                <span class="corner tl"></span>
-                <span class="corner br"></span>
-
+            <div class="photo reveal">
                 <img
                     src="1000199142.jpg"
                     alt="Climate Warriors Mission felicitation"
                     loading="lazy"
                 >
-
             </div>
 
         </div>
@@ -1007,46 +1475,49 @@
 
 
 <!-- =========================================================
-     SIGN OFF
+     FOOTER
 ========================================================== -->
 
-<section class="footer" id="footer">
+<footer class="footer">
 
     <div class="container">
 
         <div class="footer-content reveal">
 
-            <div class="label">
-                TRANSMISSION_COMPLETE
+            <div class="eyebrow">
+                With Gratitude
             </div>
 
             <h2 class="footer-title">
                 Wishing you the
-                <span>
-                    happiest Teacher's Day!
-                </span>
+                <span>happiest Teacher's Day!</span>
             </h2>
 
             <div class="footer-line"></div>
 
             <p class="footer-text">
                 — With immense respect and love,
+                <br>
                 <strong>
                     The Tinkers of Army Public School
                     Lal Bahadur Shastri Marg
                 </strong>
-                ⚙️💙
+                💙
             </p>
 
-            <div class="footer-mark">
-                BUILT WITH CURIOSITY • INSPIRED BY A MENTOR
+            <div class="footer-heart">
+                ⚙️ ✨ 💙
+            </div>
+
+            <div class="footer-small">
+                Made with gratitude by The Tinkers
             </div>
 
         </div>
 
     </div>
 
-</section>
+</footer>
 
 
 <!-- =========================================================
@@ -1055,64 +1526,22 @@
 
 <script>
 
-    /* =========================================
-       PARTICLES
-    ========================================= */
-
-    const particleContainer =
-        document.getElementById("particles");
-
-    const particleCount =
-        window.innerWidth < 600 ? 30 : 60;
-
-    for (let i = 0; i < particleCount; i++) {
-
-        const particle =
-            document.createElement("span");
-
-        particle.className = "particle";
-
-        particle.style.left =
-            Math.random() * 100 + "%";
-
-        particle.style.top =
-            Math.random() * 100 + "%";
-
-        particle.style.animationDuration =
-            8 + Math.random() * 14 + "s";
-
-        particle.style.animationDelay =
-            Math.random() * 10 + "s";
-
-        const size =
-            1 + Math.random() * 2.5;
-
-        particle.style.width =
-            size + "px";
-
-        particle.style.height =
-            size + "px";
-
-        particleContainer.appendChild(particle);
-    }
-
-
-    /* =========================================
+    /* =====================================================
        SCROLL REVEAL
-    ========================================= */
+    ====================================================== */
 
     const revealElements =
         document.querySelectorAll(".reveal");
 
-    const observer =
+    const revealObserver =
         new IntersectionObserver(
-            entries => {
+            (entries, observer) => {
 
                 entries.forEach(entry => {
 
                     if (entry.isIntersecting) {
 
-                        entry.target.classList.add("show");
+                        entry.target.classList.add("visible");
 
                         observer.unobserve(
                             entry.target
@@ -1130,13 +1559,13 @@
         );
 
     revealElements.forEach(element => {
-        observer.observe(element);
+        revealObserver.observe(element);
     });
 
 
-    /* =========================================
-       SMOOTH ANCHOR SCROLL
-    ========================================= */
+    /* =====================================================
+       SMOOTH BUTTON SCROLL
+    ====================================================== */
 
     document.querySelectorAll(
         'a[href^="#"]'
@@ -1166,75 +1595,145 @@
     });
 
 
-    /* =========================================
-       IMAGE ERROR HANDLING
-    ========================================= */
+    /* =====================================================
+       NUMBER COUNTERS
+    ====================================================== */
+
+    const counters =
+        document.querySelectorAll(
+            ".stat-number"
+        );
+
+    const counterObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+                    const counter =
+                        entry.target;
+
+                    const target =
+                        Number(
+                            counter.dataset.target
+                        );
+
+                    const suffix =
+                        counter.dataset.suffix || "";
+
+                    const duration = 1500;
+
+                    const start =
+                        performance.now();
+
+                    function animate(currentTime) {
+
+                        const progress =
+                            Math.min(
+                                (currentTime - start) /
+                                duration,
+                                1
+                            );
+
+                        /*
+                         * Ease-out animation.
+                         */
+                        const eased =
+                            1 -
+                            Math.pow(
+                                1 - progress,
+                                3
+                            );
+
+                        const value =
+                            Math.floor(
+                                eased * target
+                            );
+
+                        counter.textContent =
+                            value.toLocaleString() +
+                            suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(
+                                animate
+                            );
+                        }
+
+                    }
+
+                    requestAnimationFrame(
+                        animate
+                    );
+
+                    counterObserver.unobserve(
+                        counter
+                    );
+
+                });
+
+            },
+            {
+                threshold: 0.7
+            }
+        );
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+
+    /* =====================================================
+       IMAGE FALLBACK
+    ====================================================== */
 
     document.querySelectorAll(
-        ".photo-card img"
+        ".photo img"
     ).forEach(image => {
 
         image.addEventListener(
             "error",
             () => {
 
-                image.style.opacity = "0";
+                image.style.display = "none";
 
-                const message =
+                const fallback =
                     document.createElement("div");
 
-                message.textContent =
-                    "IMAGE NOT FOUND";
+                fallback.textContent =
+                    "Memory image unavailable";
 
-                message.style.position =
+                fallback.style.position =
                     "absolute";
 
-                message.style.inset = "0";
+                fallback.style.inset = "0";
 
-                message.style.display =
+                fallback.style.display =
                     "flex";
 
-                message.style.alignItems =
+                fallback.style.alignItems =
                     "center";
 
-                message.style.justifyContent =
+                fallback.style.justifyContent =
                     "center";
 
-                message.style.color =
-                    "#39ff88";
+                fallback.style.color =
+                    "#718094";
 
-                message.style.fontFamily =
-                    '"Roboto Mono", monospace';
-
-                message.style.fontSize =
-                    "0.7rem";
-
-                message.style.letterSpacing =
-                    "0.15em";
+                fallback.style.fontFamily =
+                    '"DM Sans", sans-serif';
 
                 image.parentElement.appendChild(
-                    message
+                    fallback
                 );
 
             }
         );
 
     });
-
-
-    /* =========================================
-       CONSOLE EASTER EGG
-    ========================================= */
-
-    console.log(
-        "%c TINKERING LAB ",
-        "color:#39ff88;font-weight:bold;font-size:16px;"
-    );
-
-    console.log(
-        "%c Happy Teacher's Day, Akansha Ma'am! 💡 ",
-        "color:#f5c451;font-weight:bold;"
-    );
 
 </script>
 
